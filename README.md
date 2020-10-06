@@ -30,10 +30,10 @@ L'application J'Suis Pas En Cours permettra de scanner (par l'appareil photo ou 
 
 ### Pages
 
-|         Page         | Description                                                            |        Fonctionnalités majeures         | Liens vers les autres pages  |
-| :------------------: | ---------------------------------------------------------------------- | :-------------------------------------: | :--------------------------: |
-|     Landing page     | Redirection vers la page de Connexion ou de Scan                       |               Redirection               |              -               |
-|      Connexion       | Permet à l'utilisateur de se connecter                                 |         Connexion, redirection          |              -               |
-|         Scan         | Permet à l'utilisateur de scanner un QR Code correspondant à son cours | Scan, upload de fichier, appareil photo | Selfie, Librairie de selfies |
-|        Selfie        | Permet à l'utilisateur de se prendre en photo pour valider son scan    |             Appareil photo              |             Scan             |
-| Librairie de selfies | Historique des selfies avec les informations correspondantes           |                Affichage                |             Scan             |
+|         Page         | Description                                                                                                        |        Fonctionnalités majeures         | Liens vers les autres pages  |
+| :------------------: | ------------------------------------------------------------------------------------------------------------------ | :-------------------------------------: | :--------------------------: |
+|     Landing page     | Redirection vers la page de Connexion ou de Scan                                                                   |               Redirection               |              -               |
+|      Connexion       | Permet à l'utilisateur de se connecter. Demande un nouveau mot de passe si l'utilisateur n'est pas vérifié en base |         Connexion, redirection          |              -               |
+|         Scan         | Permet à l'utilisateur de scanner un QR Code correspondant à son cours                                             | Scan, upload de fichier, appareil photo | Selfie, Librairie de selfies |
+|        Selfie        | Permet à l'utilisateur de se prendre en photo pour valider son scan                                                |             Appareil photo              |             Scan             |
+| Librairie de selfies | Historique des selfies avec les informations correspondantes                                                       |                Affichage                |             Scan             |
