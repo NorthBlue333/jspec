@@ -30,10 +30,27 @@ L'application J'Suis Pas En Cours permettra de scanner (par l'appareil photo ou 
 
 ### Pages
 
-|         Page         | Description                                                                                                        |        Fonctionnalités majeures         | Liens vers les autres pages  |
-| :------------------: | ------------------------------------------------------------------------------------------------------------------ | :-------------------------------------: | :--------------------------: |
-|     Landing page     | Redirection vers la page de Connexion ou de Scan                                                                   |               Redirection               |              -               |
-|      Connexion       | Permet à l'utilisateur de se connecter. Demande un nouveau mot de passe si l'utilisateur n'est pas vérifié en base |         Connexion, redirection          |              -               |
-|         Scan         | Permet à l'utilisateur de scanner un QR Code correspondant à son cours                                             | Scan, upload de fichier, appareil photo | Selfie, Librairie de selfies |
-|        Selfie        | Permet à l'utilisateur de se prendre en photo pour valider son scan                                                |             Appareil photo              |             Scan             |
-| Librairie de selfies | Historique des selfies avec les informations correspondantes                                                       |                Affichage                |             Scan             |
+| Page | Description | Fonctionnalités majeures | Liens vers les autres pages |
+|:-:|-|:-:|:-:|
+| Landing page | Redirection vers la page de Connexion ou de Scan | Redirection | - |
+| Connexion | Permet à l'utilisateur de se connecter. Demande un nouveau mot de passe si l'utilisateur n'est pas vérifié en base | Connexion, redirection | - |
+| Scan | Permet à un utilisateur "Élève" de scanner un QR Code correspondant à son cours | Scan, upload de fichier, appareil photo | Selfie, Librairie de selfies |
+| Selfie | Permet à un utilisateur "Élève" de se prendre en photo pour valider son scan | Appareil photo | Scan |
+| Librairie de selfies | Historique des selfies avec les informations correspondantes | Affichage | Scan |
+| Stream de QR Code | Permet à un utilisateur "Professeur" de streamer/télécharger le QR Code correspondant à son cours | Affichage, téléchargement de fichier | - |
+
+### Technique
+
+* **Github** pour le versionnement du code
+* **Ionic** comme framework mobile
+* **Firebase** pour le backend et la base de données
+
+La création d'utilisateur ainsi que la récupération des cours sera externalisée (donc pas prise en compte dans le développement de cette application)
+
+### Style
+
+Doit correspondre à la charte graphique de JSEC.
+
+### Contraintes
+
+Le projet doit être terminé avant la fin du cours de Développement mobile.
