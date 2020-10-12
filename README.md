@@ -58,7 +58,7 @@ Toutes les pages qui comprennent un utilisateur connecté auront une barre dans 
 
 * **Github** pour le versionnement du code
 * **Ionic** comme framework mobile
-* **Firebase** pour le backend et la base de données
+* **Firebase** pour le backend et la base de données. Nous avons choisi Firebase car c'est une techno que nous avons pu approcher l'année dernière, que la documentation est bien fournie et qu'elle est simple d'utilisation. De plus, tout est gratuit pour un environnement de développement
 
 La création d'utilisateur (élèves ou professeurs) ainsi que la récupération des cours sera externalisée et donc ne seront pas prises en compte dans le développement de cette application (pour des besoins de tests, les données seront rentrées à la main).
 
