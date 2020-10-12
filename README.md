@@ -1,6 +1,7 @@
 # jspec
 
 Application J'Suis Pas En Cours
+Par **Enzo Guilmer** et **Louna Tabbara**
 
 ## Règles git
 
