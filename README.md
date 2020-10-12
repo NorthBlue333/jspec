@@ -1,8 +1,20 @@
 # jspec
 
-Application J'Suis Pas En Cours par **Enzo Guilmer** et **Louna Tabbara**. Dernière édition de ce README le 12/10/2020.
+Application J'Suis Pas En Cours par **Enzo Guilmer** et **Louna Tabbara**. Dernière édition de ce README le 12/10/2020. Ce markdown peut être converti en PDF [ici](https://www.markdowntopdf.com/).
 
-## Règles git
+Table of Contents
+=================
+
+* [Règles Git](#règles-git)
+  * [Messages de commit](#messages-de-commit)
+  * [Branches](#branches)
+* [Cahier des charges](#cahier-des-charges)
+  * [Pages](#pages)
+  * [Technique](#technique)
+  * [Style](#style)
+  * [Contraintes](#contraintes)
+
+## Règles Git
 
 **Messages de commit :**
 
@@ -39,13 +51,15 @@ L'application J'Suis Pas En Cours permettra de scanner (par l'appareil photo ou 
 | Librairie de selfies | Historique des selfies avec les informations correspondantes | Affichage | Scan |
 | Stream de QR Code | Permet à un utilisateur "Professeur" de streamer/télécharger le QR Code correspondant à son cours | Affichage, téléchargement de fichier | - |
 
+Toutes les pages qui comprennent un utilisateur connecté auront une barre dans le haut de l'écran avec le logo de l'application ainsi que les informations principales de l'utilisateur. Depuis cette barre, l'utilisateur pourra se déconnecter. Les liens d'une page vers une autre seront accessibles via un drawer ouvrable depuis cette même barre.
+
 ### Technique
 
 * **Github** pour le versionnement du code
 * **Ionic** comme framework mobile
 * **Firebase** pour le backend et la base de données
 
-La création d'utilisateur ainsi que la récupération des cours sera externalisée (donc pas prise en compte dans le développement de cette application)
+La création d'utilisateur (élèves ou professeurs) ainsi que la récupération des cours sera externalisée et donc ne seront pas prises en compte dans le développement de cette application (pour des besoins de tests, les données seront rentrées à la main).
 
 ### Style
 
