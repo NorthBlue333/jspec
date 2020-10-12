@@ -1,0 +1,38 @@
+section {
+    margin-top: 1em;
+    padding: 0 10px;
+}
+
+section.top {
+    position: relative;
+    width: 100%;
+    top: 1;
+}
+
+.title {
+    margin-top: 0;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+section.center {
+    position: absolute;
+    width: 100%;
+    bottom: 50%;
+}
+
+.label {
+    font-size: 1em !important;
+    margin-bottom: -0.2em !important;
+}
+
+.input {
+    font-size: 1.5em;
+}
+
+section.bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    margin-bottom: 1em;
+}
