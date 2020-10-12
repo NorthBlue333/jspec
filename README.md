@@ -131,6 +131,9 @@ Doit correspondre à la charte graphique de JSEC. Voici les codes couleurs qui s
   --ion-color-light-tint: #ffffff;
 }
 ```
+Le logo de l'application :
+
+![Logo JSPEC](https://github.com/NorthBlue333/jspec/logo.png)
 
 ### Contraintes
 
