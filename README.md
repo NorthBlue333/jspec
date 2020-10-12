@@ -1,7 +1,6 @@
 # jspec
 
-Application J'Suis Pas En Cours
-Par **Enzo Guilmer** et **Louna Tabbara**
+Application J'Suis Pas En Cours par **Enzo Guilmer** et **Louna Tabbara**. Dernière édition de ce README le 12/10/2020.
 
 ## Règles git
 
@@ -50,7 +49,73 @@ La création d'utilisateur ainsi que la récupération des cours sera externalis
 
 ### Style
 
-Doit correspondre à la charte graphique de JSEC.
+Doit correspondre à la charte graphique de JSEC. Voici les codes couleurs qui seront utilisés par ionic :
+```
+:root {
+  --ion-color-primary: #ff9801;
+  --ion-color-primary-rgb: 255,152,1;
+  --ion-color-primary-contrast: #000000;
+  --ion-color-primary-contrast-rgb: 0,0,0;
+  --ion-color-primary-shade: #e08601;
+  --ion-color-primary-tint: #ffa21a;
+
+  --ion-color-secondary: #d3d3d3;
+  --ion-color-secondary-rgb: 211,211,211;
+  --ion-color-secondary-contrast: #000000;
+  --ion-color-secondary-contrast-rgb: 0,0,0;
+  --ion-color-secondary-shade: #bababa;
+  --ion-color-secondary-tint: #d7d7d7;
+
+  --ion-color-tertiary: #090909;
+  --ion-color-tertiary-rgb: 9,9,9;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255,255,255;
+  --ion-color-tertiary-shade: #080808;
+  --ion-color-tertiary-tint: #222222;
+
+  --ion-color-success: #adcf94;
+  --ion-color-success-rgb: 173,207,148;
+  --ion-color-success-contrast: #000000;
+  --ion-color-success-contrast-rgb: 0,0,0;
+  --ion-color-success-shade: #98b682;
+  --ion-color-success-tint: #b5d49f;
+
+  --ion-color-warning: #b78e47;
+  --ion-color-warning-rgb: 183,142,71;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0,0,0;
+  --ion-color-warning-shade: #a17d3e;
+  --ion-color-warning-tint: #be9959;
+
+  --ion-color-danger: #eb445a;
+  --ion-color-danger-rgb: 235,68,90;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255,255,255;
+  --ion-color-danger-shade: #cf3c4f;
+  --ion-color-danger-tint: #ed576b;
+
+  --ion-color-dark: #222428;
+  --ion-color-dark-rgb: 34,36,40;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255,255,255;
+  --ion-color-dark-shade: #1e2023;
+  --ion-color-dark-tint: #383a3e;
+
+  --ion-color-medium: #9e9e9e;
+  --ion-color-medium-rgb: 158,158,158;
+  --ion-color-medium-contrast: #000000;
+  --ion-color-medium-contrast-rgb: 0,0,0;
+  --ion-color-medium-shade: #8b8b8b;
+  --ion-color-medium-tint: #a8a8a8;
+
+  --ion-color-light: #ffffff;
+  --ion-color-light-rgb: 255,255,255;
+  --ion-color-light-contrast: #000000;
+  --ion-color-light-contrast-rgb: 0,0,0;
+  --ion-color-light-shade: #e0e0e0;
+  --ion-color-light-tint: #ffffff;
+}
+```
 
 ### Contraintes
 
