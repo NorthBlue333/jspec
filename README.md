@@ -44,11 +44,12 @@ L'application J'Suis Pas En Cours permettra de scanner (par l'appareil photo ou 
 
 | Page | Description | Fonctionnalités majeures | Liens vers les autres pages |
 |:-:|-|:-:|:-:|
-| Landing page | Redirection vers la page de Connexion ou de Scan | Redirection | - |
-| Connexion | Permet à l'utilisateur de se connecter. Demande un nouveau mot de passe si l'utilisateur n'est pas vérifié en base | Connexion, redirection | - |
-| Scan | Permet à un utilisateur "Élève" de scanner un QR Code correspondant à son cours | Scan, upload de fichier, appareil photo | Selfie, Librairie de selfies |
+| Landing page | Redirection vers la page de Connexion ou d'Information sur le cours | Redirection | - |
+| Connexion | Permet à l'utilisateur ("Élève" ou "Professeur") de se connecter. Demande un nouveau mot de passe si l'utilisateur n'est pas vérifié en base | Connexion, redirection | - |
+| Information sur le cours | Permet à l'utilisateur ("Élève" ou "Professeur") d'avoi des informations sur son cours actuel et de pouvoir accéder au Scan ou au Stream ("Élève" / "Professeur") | Affichage de texte | Scan ou Stream, Librairie de selfies |
+| Scan | Permet à un utilisateur "Élève" de scanner un QR Code correspondant à son cours | Scan, upload de fichier, appareil photo | Selfie |
 | Selfie | Permet à un utilisateur "Élève" de se prendre en photo pour valider son scan | Appareil photo | Scan |
-| Librairie de selfies | Historique des selfies avec les informations correspondantes | Affichage | Scan |
+| Librairie de selfies | Permet à l'utilisateur ("Élève" : ses selfies, "Professeur" : les selfies de tous les élèves qui ont été absents) d'accéder à un historique des selfies avec les informations correspondantes | Affichage | Scan |
 | Stream de QR Code | Permet à un utilisateur "Professeur" de streamer/télécharger le QR Code correspondant à son cours | Affichage, téléchargement de fichier | - |
 
 Toutes les pages qui comprennent un utilisateur connecté auront une barre dans le haut de l'écran avec le logo de l'application ainsi que les informations principales de l'utilisateur. Depuis cette barre, l'utilisateur pourra se déconnecter. Les liens d'une page vers une autre seront accessibles via un drawer ouvrable depuis cette même barre.
