@@ -133,7 +133,7 @@ Doit correspondre à la charte graphique de JSEC. Voici les codes couleurs qui s
 ```
 Le logo de l'application :
 
-![Logo JSPEC](https://github.com/NorthBlue333/jspec/assets/jspecsmall.png)
+![Logo JSPEC](https://raw.githubusercontent.com/NorthBlue333/jspec/main/assets/jspecsmall.png?token=AKLGDSJMGEC5D2VIWTK2KWC7RVOHY)
 
 ### Contraintes
 
