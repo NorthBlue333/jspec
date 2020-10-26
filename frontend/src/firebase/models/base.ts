@@ -5,35 +5,28 @@ const db = firebase.firestore()
 
 export interface BaseInterface {}
 
-type BaseClass = {
-  new (...args: any[]): Base
-  collectionName: string
-  getConverter: () => {
-    toFirestore: (model: Base) => BaseInterface
-    fromFirestore: (
-      snapshot: firebase.firestore.QueryDocumentSnapshot,
-      options: firebase.firestore.SnapshotOptions
-    ) => Base
-  }
-}
-
 export class Base {
   public id?: string
 
-  private __data: Record<string, any>
+  private __data: firebase.firestore.DocumentData
 
   public static collectionName: string
   public static attributes: string[]
 
-  constructor(data: Record<string, any>, id?: string) {
+  constructor(data: firebase.firestore.DocumentData, id?: string) {
     this.id = id
     this.__data = data
+  }
+
+  __setProperties(data: firebase.firestore.DocumentData) {
     for (const [key, value] of Object.entries(data)) {
-      if (this.modelConstructor.attributes.includes(key)) {
+      if (
+        this.modelConstructor.attributes.includes(key) &&
+        Object.prototype.hasOwnProperty.call(this, key)
+      ) {
         this[key as keyof this] = value
       }
     }
-    console.log(this)
   }
 
   static async get<T extends typeof Base>(

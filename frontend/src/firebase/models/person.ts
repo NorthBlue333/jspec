@@ -13,4 +13,9 @@ export class Person extends Base implements PersonInterface {
 
   static collectionName = 'people'
   public static attributes = ['firstname', 'lastname', 'classIds']
+
+  constructor(data: firebase.firestore.DocumentData, id?: string) {
+    super(data, id)
+    this.__setProperties(data)
+  }
 }
