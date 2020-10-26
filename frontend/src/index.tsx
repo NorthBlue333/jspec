@@ -5,9 +5,10 @@ import * as serviceWorker from './serviceWorker'
 
 import { Person } from './firebase/models/person'
 
-Person.getAll().then((test) => {
-  test.docs.forEach((doc) => {
-    console.log(doc.data().firstname)
+Person.onSnapshot((snapshot) => {
+  snapshot.docs.forEach((doc) => {
+    const person = doc.data()
+    console.log(person)
   })
 })
 
