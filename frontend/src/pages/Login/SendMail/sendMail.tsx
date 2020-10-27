@@ -1,29 +1,34 @@
 import { IonContent, IonButtons, IonBackButton, IonIcon, IonText, IonButton, IonImg } from '@ionic/react';
 import React from 'react';
-import {checkmarkCircleOutline, home} from 'ionicons/icons'
 import './sendMail.css'
+import { RouteComponentProps } from 'react-router';
+import { checkmarkCircleOutline } from 'ionicons/icons'
 
-const SendMail: React.FC = () => {
+export interface SendMailPageProps extends RouteComponentProps<{
+  email: string;
+}> { }
+
+const SendMail: React.FC<SendMailPageProps> = ({ match }) => {
   return (
     <IonContent fullscreen={true} >
       <section className="top">
         <IonButtons slot="start">
-          <IonBackButton mode='md' defaultHref="/" />
+          <IonBackButton mode='md' defaultHref={`/login/${match.params.email}`} />
         </IonButtons>
       </section>
 
       <section className="centerBottom">
-        <IonImg className="checkIcon" src="../../../assets/icon/checkmark-circle-outline.svg"></IonImg>
-        <p>enzo.guilmer@gmail.com</p>
+        <IonIcon className="checkIcon" icon={checkmarkCircleOutline}></IonIcon>
+        <p>{match.params.email}</p>
         <IonText >
           <h2>Consultez votre voîte de réception et cliquez sur le lien contenu dans l'e-mail que nous vous avons envoyé pour continuer.</h2>
         </IonText>
       </section>
 
-      <section className='bottom'>
-        <IonButton class="button" expand="block" >Ouvrir les e-mails</IonButton>
-        <IonButton class="button" expand="block" >Renvoyer</IonButton>
-      </section>
+
+      <IonButton class="bottom-section margin-bottom-5" routerLink={`/landing`} expand="block" >Ouvrir les e-mails</IonButton>
+      <IonButton class="bottom-section" expand="block" >Renvoyer</IonButton>
+
     </IonContent >
   );
 };

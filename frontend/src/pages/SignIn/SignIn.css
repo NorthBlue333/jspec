@@ -1,22 +1,16 @@
-section {
+.bottom-section {
     margin-top: 1em;
     padding: 0 10px;
-}
-
-section.bottom-section {
     position: absolute;
     bottom: 0;
     width: 100%;
-}
-
-section .button {
     height: 3.5em;
     margin-bottom: 1em;
 }
 
 .imagelogo {
-    position: absolute;
-    width: 50%;
-    left: 25%;
+    width: 15em;
+    margin: auto;
+    height: 100%;
     top: 20%
 }

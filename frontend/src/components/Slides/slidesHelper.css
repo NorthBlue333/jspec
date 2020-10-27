@@ -1,0 +1,9 @@
+ion-slides {
+  height: 100%;
+}
+ion-slide ion-text {
+  padding: 1em;
+}
+.icon {
+  font-size: 120px;
+}
