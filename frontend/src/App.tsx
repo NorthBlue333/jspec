@@ -22,13 +22,23 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import SignIn from './pages/SignIn/SignIn';
+import Login from './pages/Login/Login';
+import SendMail, { SendMailPageProps } from './pages/Login/SendMail/sendMail';
+import LandingPage from './pages/LandingPage/LandingPage';
 
 const App: React.FC = () => (
   <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route path="/home" component={Home} exact={true} />
+    <IonReactRouter >
+      <IonRouterOutlet >
+        <Route path="/home" component={SignIn} exact={true} />
         <Route exact path="/" render={() => <Redirect to="/home" />} />
+        <Route exact path="/login/:email" render={(props: SendMailPageProps) => <Login email={props.match.params.email} />} />
+
+        <Route path="/login" component={Login} exact={true} />
+        <Route path="/login/sendmail/:email" component={SendMail} exact={true} />
+
+        <Route path='/landing' component={LandingPage} exact={true} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

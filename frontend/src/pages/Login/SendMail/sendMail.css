@@ -1,0 +1,22 @@
+section.centerBottom {
+  position: absolute;
+  width: 100%;
+  bottom: 35%;
+}
+
+section h2 {
+  font-size: 1.8em;
+  text-align: center;
+}
+
+section p {
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.checkIcon {
+  font-size: 7em;
+  margin: auto;
+  display: block;
+}
+

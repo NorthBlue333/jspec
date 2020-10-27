@@ -1,0 +1,16 @@
+.bottom-section {
+    margin-top: 1em;
+    padding: 0 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 3.5em;
+    margin-bottom: 1em;
+}
+
+.imagelogo {
+    width: 15em;
+    margin: auto;
+    height: 100%;
+    top: 20%
+}
