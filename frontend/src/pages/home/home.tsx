@@ -1,12 +1,13 @@
-import { IonButtons, IonHeader, IonTitle, IonToolbar, IonIcon, IonMenuButton, IonImg, IonCol, IonRow, IonContent, IonText, IonFab, IonFabButton, IonButton, IonModal, IonFooter } from '@ionic/react';
+import { IonIcon, IonImg, IonRow, IonContent, IonText, IonButton, IonModal } from '@ionic/react';
 import React, { useState } from 'react';
-import Menu from '../../components/Menu/menu';
-import './LandingPage.css'
-import { add, personCircleOutline, helpCircleOutline } from 'ionicons/icons'
-import SlidesHelper from '../../components/Slides/slidesHelper';
+import Menu from '../../components/menu/menu';
+import './home.css'
+import { helpCircleOutline } from 'ionicons/icons'
+import SlidesHelper from '../../components/slides/slidesHelper';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import AppHeader from '../../components/header/header';
 
-const LandingPage: React.FC<{ email?: string }> = (props) => {
+const Home: React.FC<{ email?: string }> = (props) => {
 
   const [showModal, setShowModal] = useState(false);
 
@@ -21,23 +22,8 @@ const LandingPage: React.FC<{ email?: string }> = (props) => {
       <IonModal cssClass='modal' isOpen={showModal} animated={false}>
         <SlidesHelper closeModal={setShowModal} />
       </IonModal>
-      <IonHeader id="main-content" className='header'>
-        <IonToolbar>
-          <IonRow>
-            <IonImg className='jspecIcon' src="/assets/icon/jspec.svg"></IonImg>
+      <AppHeader />
 
-            <IonCol className='col'>
-              <IonTitle color='primary'>Guilmer</IonTitle>
-              <IonTitle>Enzo</IonTitle>
-            </IonCol>
-          </IonRow>
-          <IonButtons slot="end">
-            <IonMenuButton className="menuButton">
-              <IonIcon className='menuIcon' color='primary' icon={personCircleOutline}></IonIcon>
-            </IonMenuButton>
-          </IonButtons>
-        </IonToolbar>
-      </IonHeader>
 
       <IonContent className='center' fullscreen={true}>
 
@@ -60,7 +46,7 @@ const LandingPage: React.FC<{ email?: string }> = (props) => {
             <IonText className="white">
               cliquer ici pour scanner le Qrcode
             </IonText>
-        </IonButton>
+          </IonButton>
 
         </section>
 
@@ -94,4 +80,4 @@ const LandingPage: React.FC<{ email?: string }> = (props) => {
   );
 };
 
-export default LandingPage;
+export default Home;

@@ -1,8 +1,7 @@
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -20,25 +19,22 @@ import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
-/* Theme variables */
 import './theme/variables.css';
 import SignIn from './pages/SignIn/SignIn';
-import Login from './pages/Login/Login';
-import SendMail, { SendMailPageProps } from './pages/Login/SendMail/sendMail';
-import LandingPage from './pages/LandingPage/LandingPage';
+import Login from './pages/login/login';
+import Home from './pages/home/home';
+import Photo from './pages/photo/photo';
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter >
       <IonRouterOutlet >
-        <Route path="/home" component={SignIn} exact={true} />
-        <Route exact path="/" render={() => <Redirect to="/home" />} />
-        <Route exact path="/login/:email" render={(props: SendMailPageProps) => <Login email={props.match.params.email} />} />
+        <Route path="/" component={SignIn} exact={true} />
 
         <Route path="/login" component={Login} exact={true} />
-        <Route path="/login/sendmail/:email" component={SendMail} exact={true} />
 
-        <Route path='/landing' component={LandingPage} exact={true} />
+        <Route path='/home' component={Home} exact={true} />
+        <Route path='/photos' component={Photo} exact={true} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

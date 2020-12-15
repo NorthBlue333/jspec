@@ -1,0 +1,13 @@
+.logoutModal {
+  --max-width: 90%;
+  --max-height: 30%;
+}
+
+.logout {
+  font-size: 12px;
+  padding: 1em 4em;
+}
+
+.logoutButton {
+  padding: 0 2em;
+}
