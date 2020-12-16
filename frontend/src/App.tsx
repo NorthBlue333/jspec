@@ -20,6 +20,8 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
 import './theme/variables.css';
+import './theme/main.css';
+
 import SignIn from './pages/SignIn/SignIn';
 import Login from './pages/login/login';
 import Home from './pages/home/home';

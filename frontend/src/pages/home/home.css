@@ -15,48 +15,34 @@
   width: 6em;
   padding: .4em;
 }
-.italic {
-  font-style: italic;
-}
-.col {
-  text-align: right;
-}
-.center {
-  text-align: center;
-}
-.primary-dark {
-  color: #9c5c00;
-}
+
 .border {
-  border-top: 1px solid #9c5c00;
-  border-bottom: 1px solid #9c5c00;
+  border-top: 1px solid var(--ion-color-primary-dark);
+  border-bottom: 1px solid var(--ion-color-primary-dark);
   width: 95%;
   margin: auto;
 }
-.white {
-  color: #ffffff;
+
+.border-right {
+  border-right: 1px solid var(--ion-color-light-shade);
 }
-.light {
-  color: #d1d1d1;
-}
-.helpIcon {
-  font-size: 2.5em;
-  padding: 0.1em;
-}
-.helpButton {
-  position: absolute;
-  bottom: 0;
-}
-.version {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin-right: 0.5em;
-}
+
 .modal {
   --max-width: 90%;
   --max-height: 85%;
 }
 .pictureSection {
   padding: 1em;
+}
+
+.max-h-400px {
+  max-height: 400px;
+}
+
+ion-content {
+  --padding-bottom: 160px;
+}
+
+ion-button.custom-text-white {
+  --ion-color-contrast: white !important;
 }
