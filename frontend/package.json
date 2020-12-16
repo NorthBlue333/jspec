@@ -21,6 +21,8 @@
     "@types/react-router": "^5.1.4",
     "@types/react-router-dom": "^5.1.6",
     "ionicons": "^5.2.3",
+    "cordova-plugin-camera": "^5.0.0",
+    "firebase": "^7.22.1",
     "phonegap-plugin-barcodescanner": "^8.1.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",

@@ -7,61 +7,106 @@ import {
   IonText,
   IonButton,
   IonModal,
-} from "@ionic/react";
-import React, { useEffect, useState } from "react";
-import Menu from "../../components/menu/menu";
-import "./home.css";
-import { helpCircleOutline, planetOutline } from "ionicons/icons";
-import SlidesHelper from "../../components/slides/slidesHelper";
-import { BarcodeScanner } from "@ionic-native/barcode-scanner";
-import AppHeader from "../../components/header/header";
-import { usePhotoGallery, Photo } from "../../hooks/usePhotoGallery";
+} from '@ionic/react';
+import React, { useContext, useEffect, useState } from 'react';
+import './home.css';
+import { planetOutline } from 'ionicons/icons';
+import SlidesHelper from '../../components/slides/slidesHelper';
+import AppHeader from '../../components/header/header';
+import { usePhotoGallery, Photo } from '../../hooks/usePhotoGallery';
+import Menu from '../../components/menu/menu';
+import './home.css';
+import { helpCircleOutline } from 'ionicons/icons';
+import { Redirect } from 'react-router';
+import { AppContext } from '../../context/AppContext';
+import { Course } from '../../firebase/models/course';
+import { CourseHistory } from '../../firebase/models/courseHistory';
 
 const Home: React.FC<{ email?: string }> = (props) => {
-  const hasCourse = true;
-
+  const appContext = useContext(AppContext);
   const { takePhoto, photos } = usePhotoGallery();
-
-  const [lastPhoto, setLastPhoto] = useState<Photo | null>(null)
-
+  const [lastPhoto, setLastPhoto] = useState<Photo | null>(null);
   const [showModal, setShowModal] = useState(false);
+  const [isPhotoTaken, setisPhotoTaken] = useState<boolean>(false);
 
-  const [isPhotoTaken, setisPhotoTaken] = useState<boolean>(false)
+  const now = new Date().getTime();
+  const foundCurrentCourseHistory = appContext.nextCourseHistory.find(
+    (courseHistory) =>
+      courseHistory.startDate.toMillis() <= now &&
+      courseHistory.endDate.toMillis() >= now
+  );
+  const foundCurrentCourse = appContext.courses.find(
+    (course) => course.id === foundCurrentCourseHistory?.parentId
+  );
+  const currentCourse: {
+    course: Course;
+    courseHistory: CourseHistory;
+  } | null =
+    foundCurrentCourse && foundCurrentCourseHistory
+      ? {
+          course: foundCurrentCourse,
+          courseHistory: foundCurrentCourseHistory,
+        }
+      : null;
+
+  const foundNextCourseHistory = appContext.nextCourseHistory.find(
+    (courseHistory) => courseHistory.startDate.toMillis() > now
+  );
+  const foundNextCourse = appContext.courses.find(
+    (course) => course.id === foundCurrentCourseHistory?.parentId
+  );
+  const nextCourse: {
+    course: Course;
+    courseHistory: CourseHistory;
+  } | null =
+    foundNextCourseHistory && foundNextCourse
+      ? {
+          course: foundNextCourse,
+          courseHistory: foundNextCourseHistory,
+        }
+      : null;
 
   const openScanner = async () => {
     // const barecode = await BarcodeScanner.scan()
     // if (barecode.text) {
-      await takePhoto()
-      setisPhotoTaken(true)
+    await takePhoto();
+    setisPhotoTaken(true);
     // }
   };
 
   useEffect(() => {
-    if (isPhotoTaken)
-      setLastPhoto(photos[0])
-
-  }, [photos, isPhotoTaken])
-
+    if (isPhotoTaken) setLastPhoto(photos[0]);
+  }, [photos, isPhotoTaken]);
 
   const showActualCourse = () => (
     <>
-      <h4 className="custom-font-bold custom-underline custom-text-primary custom-uppercase">
+      <h4 className="custom-font-bold custom-underline custom-text-primary ion-text-uppercase">
         Votre cours
-        </h4>
-      <h5 className="custom-text-primary">Architecture micro-service</h5>
-      <p className="custom-italic custom-text-light-shade">
+      </h4>
+      <h5 className="custom-text-primary">{currentCourse?.course.name}</h5>
+      {/* <p className="custom-italic custom-text-light-shade">
         Aucune salle définie
-        </p>
-      <p className="custom-text-primary">09:00 - 13:00</p>
+      </p> */}
+      <p className="custom-text-primary">
+        {currentCourse?.courseHistory.startDate
+          .toDate()
+          .toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
+        &nbsp;-&nbsp;
+        {currentCourse?.courseHistory.endDate
+          .toDate()
+          .toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
+      </p>
 
       <section className="pictureSection">
         {/* @TODO add image of the person Or button to take picture */}
         <IonImg
           style={{ maxWidth: '18em', margin: 'auto' }}
-          src={lastPhoto ? lastPhoto.webviewPath : "/assets/icon/jspec.svg"}></IonImg>
-        <p
-          className={lastPhoto ? "custom-text-success" : 'color-danger'}>
-          {lastPhoto ? 'Votre non présence a bien été enregistrée' : 'Vous devez scanner le Qrcode et prendre une photo pour montrer que vous n\'etes pas la'}
+          src={lastPhoto ? lastPhoto.webviewPath : '/assets/icon/jspec.svg'}
+        ></IonImg>
+        <p className={lastPhoto ? 'custom-text-success' : 'color-danger'}>
+          {lastPhoto
+            ? 'Votre non présence a bien été enregistrée'
+            : "Vous devez scanner le Qrcode et prendre une photo pour montrer que vous n'etes pas la"}
         </p>
 
         <IonButton
@@ -69,34 +114,50 @@ const Home: React.FC<{ email?: string }> = (props) => {
           color="primary"
           onClick={openScanner}
         >
-          cliquer ici pour scanner le QRcode
-          </IonButton>
+          Cliquer ici pour scanner le QRcode
+        </IonButton>
       </section>
-
-      <div className="border">
-        <p className="custom-text-primary-dark">
-          Prochain cours prévu dans 3 heures
-          </p>
-        <p className="custom-text-light-dark">
-          Architecture micro-services à 14:00
-          </p>
-      </div>
     </>
-  )
+  );
 
+  const showNextCourse = () => (
+    <div className="border">
+      <p className="custom-text-primary-dark">
+        Prochain cours prévu dans{' '}
+        {(
+          ((nextCourse?.courseHistory.startDate.toMillis() ?? now) - now) /
+          1000 /
+          60 /
+          60
+        ).toFixed(0)}{' '}
+        heure(s)
+      </p>
+      <p className="custom-text-light-dark">
+        {nextCourse?.course.name} le{' '}
+        {nextCourse?.courseHistory.startDate
+          .toDate()
+          .toLocaleDateString('fr-FR')}
+        &nbsp;à&nbsp;
+        {nextCourse?.courseHistory.startDate
+          .toDate()
+          .toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
+      </p>
+    </div>
+  );
 
   const showNoCourse = () => (
     <>
       <h4 style={{ fontWeight: 'bold' }}>Aucun cours programmé</h4>
       <section className="pictureSection">
-
-        <IonIcon style={{ fontSize: '10em', margin: 'auto', opacity: 0.23 }} icon={planetOutline} ></IonIcon>
-
+        <IonIcon
+          style={{ fontSize: '10em', margin: 'auto', opacity: 0.23 }}
+          icon={planetOutline}
+        ></IonIcon>
       </section>
     </>
-  )
+  );
 
-
+  if (!appContext.currentPerson) return <Redirect to="/" />;
   return (
     <React.Fragment>
       <Menu />
@@ -114,8 +175,8 @@ const Home: React.FC<{ email?: string }> = (props) => {
         class="ion-text-center custom-position-relative"
         forceOverscroll
       >
-        {hasCourse ? showActualCourse() : showNoCourse()}
-
+        {!!currentCourse ? showActualCourse() : showNoCourse()}
+        {!!nextCourse && showNextCourse()}
 
         <IonRow class="custom-position-fixed custom-w-full ion-align-items-center custom-bottom-0 custom-bg-white max-h-60px">
           <IonCol class="custom-pl-4">
@@ -136,7 +197,7 @@ const Home: React.FC<{ email?: string }> = (props) => {
             </IonText>
           </IonCol>
           <IonCol class="custom-text-light-shade ion-text-right custom-pr-4">
-            v1.3.4
+            v0.8.0
           </IonCol>
         </IonRow>
       </IonContent>
