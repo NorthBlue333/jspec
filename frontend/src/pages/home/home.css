@@ -1,0 +1,54 @@
+.menuIcon {
+  width: 3em;
+  height: 3em;
+}
+.menuButton {
+  width: 3em;
+}
+.menuLabel {
+  margin-left: 1em;
+}
+.header {
+  margin-top: -1em;
+}
+.jspecIcon {
+  width: 6em;
+  padding: .4em;
+}
+
+.border {
+  border-top: 1px solid var(--ion-color-primary-dark);
+  border-bottom: 1px solid var(--ion-color-primary-dark);
+  width: 95%;
+  margin: auto;
+}
+
+.border-right {
+  border-right: 1px solid var(--ion-color-light-shade);
+}
+
+.modal {
+  --max-width: 90%;
+  --max-height: 85%;
+}
+.pictureSection {
+  padding: 1em;
+}
+
+.max-h-400px {
+  max-height: 400px;
+}
+
+ion-content {
+  --padding-bottom: 160px;
+}
+
+ion-button.custom-text-white {
+  --ion-color-contrast: white !important;
+}
+.fullheight {
+  height: 60vh;
+}
+.color-danger {
+  color: #c52121;
+}

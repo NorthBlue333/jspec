@@ -1,0 +1,98 @@
+/* position */
+.custom-position-absolute {
+  position: absolute;
+}
+
+.custom-position-fixed {
+  position: fixed;
+}
+
+.custom-position-relative {
+  position: relative;
+}
+
+/* top,bottom,left,right */
+.custom-top-0 {
+  top: 0;
+}
+
+.custom-bottom-0 {
+  bottom: 0;
+}
+
+.custom-left-0 {
+  left: 0;
+}
+
+.custom-right-0 {
+  right: 0;
+}
+
+/* width */
+.custom-w-full {
+  width: 100%;
+}
+
+/* height */
+.custom-h-full {
+  height: 100%;
+}
+
+/* text color */
+.custom-text-light {
+  color: var(--ion-color-light);
+}
+
+.custom-text-light-shade {
+  color: var(--ion-color-light-shade);
+}
+
+.custom-text-light-dark {
+  color: var(--ion-color-light-dark);
+}
+
+.custom-text-primary {
+  color: var(--ion-color-primary);
+}
+
+.custom-text-primary-dark {
+  color: var(--ion-color-primary-dark);
+}
+
+.custom-text-success {
+  color: var(--ion-color-success);
+}
+
+/* background color */
+.custom-bg-white {
+  background-color: white;
+}
+
+/* padding */
+.custom-pr-4 {
+  padding-right: 0.5rem;
+}
+.custom-pl-4 {
+  padding-left: 0.5rem;
+}
+.custom-p-4 {
+  padding: 0.5rem;
+}
+
+/* font style */
+.custom-italic {
+  font-style: italic;
+}
+
+.custom-underline {
+  text-decoration: underline;
+}
+
+.custom-font-bold {
+  font-weight: bold;
+}
+
+/* font size */
+.custom-text-sm {
+  font-size: small;
+}
