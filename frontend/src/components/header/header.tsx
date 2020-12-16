@@ -7,22 +7,32 @@ import {
   IonButtons,
   IonMenuButton,
   IonIcon,
-} from "@ionic/react";
-import { personCircleOutline } from "ionicons/icons";
-import React from "react";
+} from '@ionic/react';
+import { personCircleOutline } from 'ionicons/icons';
+import React, { useContext } from 'react';
+import { useHistory } from 'react-router';
+import { AppContext } from '../../context/AppContext';
 
 const AppHeader: React.FC = () => {
+  const appContext = useContext(AppContext);
+  const history = useHistory();
   return (
     <IonHeader id="main-content" className="header">
       <IonToolbar>
         <IonRow class="ion-align-items-center">
-          <IonImg className="jspecIcon" src="/assets/icon/jspec.svg"></IonImg>
+          <IonImg
+            className="jspecIcon"
+            src="/assets/icon/jspec.svg"
+            onClick={() => history.push('/home')}
+          ></IonImg>
 
           <IonCol class="ion-text-right border-right custom-pr-4">
-            <p className="custom-text-primary ion-no-margin custom-uppercase custom-font-bold">
-              Guilmer
+            <p className="custom-text-primary ion-no-margin ion-text-uppercase custom-font-bold">
+              {appContext.currentPerson?.firstname}
             </p>
-            <p className="ion-no-margin">Enzo</p>
+            <p className="ion-no-margin">
+              {appContext.currentPerson?.lastname}
+            </p>
           </IonCol>
         </IonRow>
         <IonButtons slot="end">

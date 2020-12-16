@@ -33,6 +33,11 @@
   width: 100%;
 }
 
+/* height */
+.custom-h-full {
+  height: 100%;
+}
+
 /* text color */
 .custom-text-light {
   color: var(--ion-color-light);
@@ -70,6 +75,9 @@
 .custom-pl-4 {
   padding-left: 0.5rem;
 }
+.custom-p-4 {
+  padding: 0.5rem;
+}
 
 /* font style */
 .custom-italic {
@@ -78,10 +86,6 @@
 
 .custom-underline {
   text-decoration: underline;
-}
-
-.custom-uppercase {
-  text-transform: uppercase;
 }
 
 .custom-font-bold {

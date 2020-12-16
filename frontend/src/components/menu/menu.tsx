@@ -5,10 +5,10 @@ import {
   IonItem,
   IonIcon,
   IonLabel,
-} from "@ionic/react";
-import React, { useRef, useState } from "react";
-import { imageOutline, paperPlane } from "ionicons/icons";
-import LogOut from "../modal/logOut";
+} from '@ionic/react';
+import React, { useRef, useState } from 'react';
+import { imageOutline, logOutOutline } from 'ionicons/icons';
+import LogOut from '../modal/logOut';
 
 const Menu: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
@@ -21,18 +21,23 @@ const Menu: React.FC = () => {
       <IonMenu side="end" menuId="menu" content-id="main-content">
         <IonContent>
           <IonList>
-            <IonItem onClick={() => { setShowModal(true); closeMenu() }}>
-              <IonIcon icon={paperPlane}></IonIcon>
-              <IonLabel className='menuLabel' >Déconnexion</IonLabel>
+            <IonItem
+              onClick={() => {
+                setShowModal(true);
+                closeMenu();
+              }}
+            >
+              <IonIcon icon={logOutOutline}></IonIcon>
+              <IonLabel className="menuLabel">Déconnexion</IonLabel>
             </IonItem>
             <IonItem
               onClick={() => {
                 closeMenu();
               }}
-              routerLink={"/photos"}
+              routerLink={'/photos'}
             >
               <IonIcon icon={imageOutline}></IonIcon>
-              <IonLabel className="menuLabel">Gallerie Photos</IonLabel>
+              <IonLabel className="menuLabel">Galerie Photos</IonLabel>
             </IonItem>
           </IonList>
         </IonContent>

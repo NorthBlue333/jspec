@@ -1,6 +1,5 @@
-import { Base } from './base'
-
-export interface User extends Base {
-  email: string
-  password: string
+export interface User {
+  email: string;
+  password: string;
+  id: string;
 }
