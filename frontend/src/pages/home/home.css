@@ -46,3 +46,9 @@ ion-content {
 ion-button.custom-text-white {
   --ion-color-contrast: white !important;
 }
+.fullheight {
+  height: 60vh;
+}
+.color-danger {
+  color: #c52121;
+}

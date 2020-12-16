@@ -25,7 +25,7 @@ import './theme/main.css';
 import SignIn from './pages/SignIn/SignIn';
 import Login from './pages/login/login';
 import Home from './pages/home/home';
-import Photo from './pages/photo/photo';
+import Gallery from './pages/photo/photo';
 
 const App: React.FC = () => (
   <IonApp>
@@ -36,7 +36,7 @@ const App: React.FC = () => (
         <Route path="/login" component={Login} exact={true} />
 
         <Route path='/home' component={Home} exact={true} />
-        <Route path='/photos' component={Photo} exact={true} />
+        <Route path='/photos' component={Gallery} exact={true} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

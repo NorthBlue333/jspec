@@ -7,7 +7,7 @@ import {
   IonLabel,
 } from "@ionic/react";
 import React, { useRef, useState } from "react";
-import { briefcaseOutline, imageOutline, logOutOutline } from "ionicons/icons";
+import { imageOutline, paperPlane } from "ionicons/icons";
 import LogOut from "../modal/logOut";
 
 const Menu: React.FC = () => {
@@ -21,22 +21,9 @@ const Menu: React.FC = () => {
       <IonMenu side="end" menuId="menu" content-id="main-content">
         <IonContent>
           <IonList>
-            <IonItem
-              onClick={() => {
-                closeMenu();
-              }}
-            >
-              <IonIcon icon={briefcaseOutline}></IonIcon>
-              <IonLabel className="menuLabel">Mention légales</IonLabel>
-            </IonItem>
-            <IonItem
-              onClick={() => {
-                setShowModal(true);
-                closeMenu();
-              }}
-            >
-              <IonIcon icon={logOutOutline}></IonIcon>
-              <IonLabel className="menuLabel">Déconnexion</IonLabel>
+            <IonItem onClick={() => { setShowModal(true); closeMenu() }}>
+              <IonIcon icon={paperPlane}></IonIcon>
+              <IonLabel className='menuLabel' >Déconnexion</IonLabel>
             </IonItem>
             <IonItem
               onClick={() => {

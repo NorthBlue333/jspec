@@ -1,35 +1,54 @@
-import { IonContent, IonGrid, IonRow, IonCol, IonImg } from '@ionic/react';
-import React from 'react';
+import { IonContent, IonGrid, IonRow, IonCol, IonImg, IonActionSheet, IonFab, IonFabButton, IonIcon } from '@ionic/react';
+import { camera, trash } from 'ionicons/icons';
+import React, { useState } from 'react';
 import AppHeader from '../../components/header/header';
 import Menu from '../../components/menu/menu';
+import { Photo, usePhotoGallery } from '../../hooks/usePhotoGallery';
 
-const Photo: React.FC = () => {
+const Gallery: React.FC = () => {
 
-  const photos = ['/assets/icon/jspec.svg', '/assets/icon/jspec.svg', '/assets/icon/jspec.svg', '/assets/icon/jspec.svg']
+  const { deletePhoto, photos } = usePhotoGallery();
+  const [photoToDelete, setPhotoToDelete] = useState<Photo>();
 
-  const renderPhotos = () => {
-    return photos.map(photo => (
-      <IonCol size='6' >
-        <IonImg src={photo}></IonImg>
-      </IonCol>
-    ))
-  }
+  return (
+    <React.Fragment>
+      <Menu />
+      <AppHeader />
 
-return (
-  <React.Fragment>
-    <Menu />
-    <AppHeader />
+      <IonContent>
+        <IonGrid>
+          <IonRow>
+            {photos.map((photo, index) => (
+              <IonCol size="6" key={index}>
+                <IonImg onClick={() => setPhotoToDelete(photo)} src={photo.webviewPath} />
+              </IonCol>
+            ))}
+          </IonRow>
+        </IonGrid>
 
-    <IonContent fullscreen={true}>
-      <IonGrid>
-        <IonRow>
-          {renderPhotos()}
-        </IonRow>
-      </IonGrid>
-    </IonContent>
-  </React.Fragment>
+        <IonActionSheet
+          isOpen={!!photoToDelete}
+          buttons={[{
+            text: 'Delete',
+            role: 'destructive',
+            icon: trash,
+            handler: () => {
+              if (photoToDelete) {
+                deletePhoto(photoToDelete);
+                setPhotoToDelete(undefined);
+              }
+            }
+          }, {
+            text: 'Cancel',
+            icon: 'close',
+            role: 'cancel'
+          }]}
+          onDidDismiss={() => setPhotoToDelete(undefined)}
+        />
+      </IonContent>
+    </React.Fragment>
 
-);
+  );
 };
 
-export default Photo;
+export default Gallery;
