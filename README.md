@@ -2,17 +2,16 @@
 
 Application J'Suis Pas En Cours par **Enzo Guilmer** et **Louna Tabbara**. Dernière édition de ce README le 12/10/2020. Ce markdown peut être converti en PDF [ici](https://www.markdowntopdf.com/).
 
-Table of Contents
-=================
+# Table of Contents
 
-* [Règles Git](#règles-git)
-  * [Messages de commit](#messages-de-commit)
-  * [Branches](#branches)
-* [Cahier des charges](#cahier-des-charges)
-  * [Pages](#pages)
-  * [Technique](#technique)
-  * [Style](#style)
-  * [Contraintes](#contraintes)
+- [Règles Git](#règles-git)
+  - [Messages de commit](#messages-de-commit)
+  - [Branches](#branches)
+- [Cahier des charges](#cahier-des-charges)
+  - [Pages](#pages)
+  - [Technique](#technique)
+  - [Style](#style)
+  - [Contraintes](#contraintes)
 
 ## Règles Git
 
@@ -42,29 +41,30 @@ L'application J'Suis Pas En Cours permettra de scanner (par l'appareil photo ou 
 
 ### Pages
 
-| Page | Description | Fonctionnalités majeures | Liens vers les autres pages |
-|:-:|-|:-:|:-:|
-| Landing page | Redirection vers la page de Connexion ou d'Information sur le cours | Redirection | - |
-| Connexion | Permet à l'utilisateur ("Élève" ou "Professeur") de se connecter. Demande un nouveau mot de passe si l'utilisateur n'est pas vérifié en base | Connexion, redirection | - |
-| Information sur le cours | Permet à l'utilisateur ("Élève" ou "Professeur") d'avoi des informations sur son cours actuel et de pouvoir accéder au Scan ou au Stream ("Élève" / "Professeur") | Affichage de texte | Scan ou Stream, Librairie de selfies |
-| Scan | Permet à un utilisateur "Élève" de scanner un QR Code correspondant à son cours | Scan, upload de fichier, appareil photo | Selfie |
-| Selfie | Permet à un utilisateur "Élève" de se prendre en photo pour valider son scan | Appareil photo | Scan |
-| Librairie de selfies | Permet à l'utilisateur ("Élève" : ses selfies, "Professeur" : les selfies de tous les élèves qui ont été absents) d'accéder à un historique des selfies avec les informations correspondantes | Affichage | Scan |
-| Stream de QR Code | Permet à un utilisateur "Professeur" de streamer/télécharger le QR Code correspondant à son cours | Affichage, téléchargement de fichier | - |
+|           Page           | Description                                                                                                                                                                                   |        Fonctionnalités majeures         |     Liens vers les autres pages      |
+| :----------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------: | :----------------------------------: |
+|       Landing page       | Redirection vers la page de Connexion ou d'Information sur le cours                                                                                                                           |               Redirection               |                  -                   |
+|        Connexion         | Permet à l'utilisateur ("Élève" ou "Professeur") de se connecter. Demande un nouveau mot de passe si l'utilisateur n'est pas vérifié en base                                                  |         Connexion, redirection          |                  -                   |
+| Information sur le cours | Permet à l'utilisateur ("Élève" ou "Professeur") d'avoi des informations sur son cours actuel et de pouvoir accéder au Scan ou au Stream ("Élève" / "Professeur")                             |           Affichage de texte            | Scan ou Stream, Librairie de selfies |
+|           Scan           | Permet à un utilisateur "Élève" de scanner un QR Code correspondant à son cours                                                                                                               | Scan, upload de fichier, appareil photo |                Selfie                |
+|          Selfie          | Permet à un utilisateur "Élève" de se prendre en photo pour valider son scan                                                                                                                  |             Appareil photo              |                 Scan                 |
+|   Librairie de selfies   | Permet à l'utilisateur ("Élève" : ses selfies, "Professeur" : les selfies de tous les élèves qui ont été absents) d'accéder à un historique des selfies avec les informations correspondantes |                Affichage                |                 Scan                 |
+|    Stream de QR Code     | Permet à un utilisateur "Professeur" de streamer/télécharger le QR Code correspondant à son cours                                                                                             |  Affichage, téléchargement de fichier   |                  -                   |
 
 Toutes les pages qui comprennent un utilisateur connecté auront une barre dans le haut de l'écran avec le logo de l'application ainsi que les informations principales de l'utilisateur. Depuis cette barre, l'utilisateur pourra se déconnecter. Les liens d'une page vers une autre seront accessibles via un drawer ouvrable depuis cette même barre.
 
 ### Technique
 
-* **Github** pour le versionnement du code
-* **Ionic** comme framework mobile
-* **Firebase** pour le backend et la base de données. Nous avons choisi Firebase car c'est une techno que nous avons pu approcher l'année dernière, que la documentation est bien fournie et qu'elle est simple d'utilisation. De plus, tout est gratuit pour un environnement de développement
+- **Github** pour le versionnement du code
+- **Ionic** comme framework mobile
+- **Firebase** pour le backend et la base de données. Nous avons choisi Firebase car c'est une techno que nous avons pu approcher l'année dernière, que la documentation est bien fournie et qu'elle est simple d'utilisation. De plus, tout est gratuit pour un environnement de développement
 
 La création d'utilisateur (élèves ou professeurs) ainsi que la récupération des cours sera externalisée et donc ne seront pas prises en compte dans le développement de cette application (pour des besoins de tests, les données seront rentrées à la main).
 
 ### Style
 
 Doit correspondre à la charte graphique de JSEC. Voici les codes couleurs qui seront utilisés par ionic :
+
 ```
 :root {
   --ion-color-primary: #ff9801;
@@ -131,9 +131,12 @@ Doit correspondre à la charte graphique de JSEC. Voici les codes couleurs qui s
   --ion-color-light-tint: #ffffff;
 }
 ```
+
 Le logo de l'application :
 
 ![Logo JSPEC](https://raw.githubusercontent.com/NorthBlue333/jspec/main/assets/jspecsmall.png?token=AKLGDSJMGEC5D2VIWTK2KWC7RVOHY)
+
+Il est possible de tester l'application avec le compte `louna.tabbara@ynov.com` ou `enzo.guilmer@ynov.com` et mot de passe `Test1234!`.
 
 ### Contraintes
 
