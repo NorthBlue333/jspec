@@ -21,6 +21,7 @@ import { Redirect } from 'react-router';
 import { AppContext } from '../../context/AppContext';
 import { Course } from '../../firebase/models/course';
 import { CourseHistory } from '../../firebase/models/courseHistory';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 const Home: React.FC<{ email?: string }> = (props) => {
   const appContext = useContext(AppContext);
@@ -67,11 +68,11 @@ const Home: React.FC<{ email?: string }> = (props) => {
       : null;
 
   const openScanner = async () => {
-    // const barecode = await BarcodeScanner.scan()
-    // if (barecode.text) {
-    await takePhoto();
-    setisPhotoTaken(true);
-    // }
+    const barecode = await BarcodeScanner.scan();
+    if (barecode.text) {
+      await takePhoto();
+      setisPhotoTaken(true);
+    }
   };
 
   useEffect(() => {
@@ -147,7 +148,9 @@ const Home: React.FC<{ email?: string }> = (props) => {
 
   const showNoCourse = () => (
     <>
-      <h4 style={{ fontWeight: 'bold' }}>Aucun cours programmé</h4>
+      <h4 className="custom-font-bold custom-text-primary">
+        Aucun cours programmé
+      </h4>
       <section className="pictureSection">
         <IonIcon
           style={{ fontSize: '10em', margin: 'auto', opacity: 0.23 }}
@@ -156,7 +159,7 @@ const Home: React.FC<{ email?: string }> = (props) => {
       </section>
     </>
   );
-
+  console.log(appContext.currentPerson);
   if (!appContext.currentPerson) return <Redirect to="/" />;
   return (
     <React.Fragment>

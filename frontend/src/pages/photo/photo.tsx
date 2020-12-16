@@ -7,15 +7,19 @@ import {
   IonActionSheet,
 } from '@ionic/react';
 import { trash } from 'ionicons/icons';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { Redirect } from 'react-router';
 import AppHeader from '../../components/header/header';
 import Menu from '../../components/menu/menu';
+import { AppContext } from '../../context/AppContext';
 import { Photo, usePhotoGallery } from '../../hooks/usePhotoGallery';
 
 const Gallery: React.FC = () => {
+  const appContext = useContext(AppContext);
   const { deletePhoto, photos } = usePhotoGallery();
   const [photoToDelete, setPhotoToDelete] = useState<Photo>();
 
+  if (!appContext.currentPerson) return <Redirect to="/" />;
   return (
     <React.Fragment>
       <Menu />
